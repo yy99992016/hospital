@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+     "http://struts.apache.org/dtds/struts-2.5.dtd">
+ 
+ <!-- START SNIPPET: xworkSample -->
+ <struts>
+
+    <package name="hospital" extends="struts-default" namespace="/">
+    	<action name="searchdoc" class="hospital.Doctorgetinfo">
+		<result name="SUCCESS">doctorinfo.jsp</result>
+		<result name="FAIL">fail.jsp</result>
+		</action>
+		<action name="doctorrecom" class="hospital.Doctorrecommend">
+			<result name="SUCCESS">DoctorList.jsp</result>
+			<result name="FAIL">fail.jsp</result>
+		</action>
+     </package>
+
+ 
+ </struts>
+<!-- END SNIPPET: xworkSample -->

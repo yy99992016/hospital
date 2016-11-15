@@ -28,5 +28,6 @@
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/standard-1.1.2.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/struts2-core-2.3.30.jar"/>
 	<classpathentry exported="true" kind="lib" path="WebContent/WEB-INF/lib/xwork-core-2.3.30.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.USER_LIBRARY/jdbc"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

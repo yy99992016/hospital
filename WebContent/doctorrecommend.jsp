@@ -29,7 +29,7 @@
 			<br>
 			<br>
 			<ul class="nav nav-tabs">
-				<li>
+				<li class="active">
 					 <a href="">首页</a>
 				</li>
 				<li>
@@ -40,6 +40,12 @@
 				</li>
 				<li class = "active" >
 					 <a href="doctorrecommend.jsp">按病情推荐医生</a>
+				</li>
+				<li >
+					 <a href="">个人管理</a>
+				</li>
+				<li >
+					 <a href="">预约管理</a>
 				</li>
 			</ul>
 		</div>

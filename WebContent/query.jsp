@@ -22,9 +22,7 @@
 </head>
 <body>
 	<div>
-			<s:a href="http://localhost:8080/Hospital/logoff.action" style="float:right;">退出</s:a>
-
-		<s:a href="http://localhost:8080/Hospital/patientSelfInfo.action" style="float:right;">${user}</s:a>
+		<a href="" style="float:right;"><s:property value="Name" /></a>
 	</div>
 <br>
 <br>
@@ -40,16 +38,16 @@
 			<br>
 			<ul class="nav nav-tabs">
 				<li >
-					 <a href="PatientIndex.jsp">首页</a>
+					 <a href="">首页</a>
 				</li>
 				<li>
-					 <a href="PatientdoctorSearch.jsp">医生检索</a>
+					 <a href="doctorSearch.jsp">医生检索</a>
 				</li>
 				<li >
-					 <a href="Patientdoctorinfo.jsp">医生信息查询</a>
+					 <a href="doctorinfo.jsp">医生信息查询</a>
 				</li>
 				<li >
-					 <a href="Patientdoctorrecommend.jsp">按病情推荐医生</a>
+					 <a href="doctorrecommend.jsp">按病情推荐医生</a>
 				</li>
 				<li >
 					 <a href="appointment.jsp">预约</a>
@@ -61,7 +59,7 @@
 		</div>
 		<div>
 			<form action="query" method="post">
-				<button type="submit" class="btn btn-default active">查询</button>
+				<button type="submit" class="btn btn-default active" name="Name" value="${user}">检索</button>
 			</form>
 		</div>
 	</div>

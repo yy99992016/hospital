@@ -14,11 +14,13 @@ public class Login{
 		if(!res.next()){
 			return "NoUser";
 		}
-		if(res.getString(2).equals(Password)){
-			return "Success";
-		}
 		else{
-			return "PsError";
+			if(res.getString(2).equals(Password)){
+				return "Success";
+			}
+			else{
+				return "PsError";
+			}
 		}
 	}
 }

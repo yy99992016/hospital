@@ -21,7 +21,7 @@
 	background-color:#4DFFFF;	
 }
 .login_btn{
-	width:150px;
+	width:75px;
 	margin:40px auto 0 auto;
 }
 
@@ -68,12 +68,13 @@
 <body>
 <div class="main">
 	<div class="center">
-		<form>
+		<form  action="login" method="post" name="forml">
 			<table width="200" border="0" cellspacing="10" cellpadding="10" class="login_table">
 				<tr><td width="50">Username </td><td width="100"><input type="text" name="Username"/></td></tr>
 				<tr><td width="50">Password </td><td width="100"><input type="password" name="Password"/></td></tr>
 		    </table>
 		    <input type="submit" value="登陆" class="login_btn"/>
+		    <input type="button" value="注册" onclick="forml.action='jump1.action';forml.submit()" class="login_btn"/>
 		</form>
 	</div>
 	<div>

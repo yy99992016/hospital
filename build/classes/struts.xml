@@ -16,6 +16,12 @@
 			<result name="SUCCESS">DoctorList.jsp</result>
 			<result name="FAIL">fail.jsp</result>
 		</action>
+		<action name="jump1" class="hospital.jump1">
+			<result name="SUCCESS">register.jsp</result>
+		</action>
+		<action name="login" class="hospital.Login">
+			<result name="SUCCESS">register.jsp</result>
+		</action>
      </package>
 
  

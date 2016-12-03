@@ -38,8 +38,8 @@
 		<form>
 		<table class="table">
 		<tr><td>用  户  名：</td><td><input type="text" name ="Username" placeholder="身份证号或医保卡号"/></td></tr>
-		<tr><td>密        码：</td><td><input type="password" name="Passworld"/></td></tr>
-		<tr><td>确认密码：</td><td><input type="password" name="Passworld1"/></td></tr>
+		<tr><td>密        码：</td><td><input type="password" name="Password"/></td></tr>
+		<tr><td>确认密码：</td><td><input type="password" name="Password1"/></td></tr>
 		<tr><td>用户类型：</td><td><input type="radio" name="Style" value="doctor"/>医生
 				<input type="radio" name="Style" value="patient"/>患者</td></tr>
 		<tr><td>年        龄：</td><td><input type="text" name ="Age"/></td></tr>

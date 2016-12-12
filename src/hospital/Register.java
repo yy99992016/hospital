@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import com.opensymphony.xwork2.ActionContext;
+
 
 
 public class Register {
@@ -108,6 +110,7 @@ public class Register {
 					String sql1 = "insert into patient (patientID,patientName,patientAge,patientSex,patientContact,detailillness,bloodtype,pkey,pkey1) values(\""+patientID+"\",\""+patientName+"\","+patientAge+",\""+patientSex+"\",\""+patientContact+"\",\""+detailillness+"\",\""+bloodtype+"\",\""+pkey+"\",\""+pkey1+"\")";	
 					System.out.println("成到数据库！");
 					System.out.println(sql1);
+					ActionContext.getContext().getSession().put("user",patientName);//注册成功，将用户数据放入到Session中 
 					stmt = con.createStatement();
 				    int result = stmt.executeUpdate(sql1);
 				    System.out.println(result);

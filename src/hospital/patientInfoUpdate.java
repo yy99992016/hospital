@@ -1,11 +1,9 @@
 package hospital;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-
 
 public class patientInfoUpdate {
 	private String id;
@@ -70,7 +68,7 @@ public class patientInfoUpdate {
 	{
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-		   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness","root","wan2013"); 
+		   Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness","root","123456"); 
 	        String sql = "update Patient set PatientAge="+age+",PatientSex=\""+sex+"\",PatientContact=\""+contact+"\",Detailillness=\""+details+"\",Bloodtype=\""+blood+"\" where PatientID=\""+id+"\"";
 	        System.out.println(sql); 
 	        System.out.println("fds");

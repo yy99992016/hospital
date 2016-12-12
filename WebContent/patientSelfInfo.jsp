@@ -14,7 +14,22 @@
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<title>《<s:property value="bo.title"/>》及其作者(<s:property value="au.name"/>)的详细信息</title>
+<title><s:property value="pt.PatientName" />的详细信息</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Medical Clinic Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Archivo+Narrow:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <script type="text/javascript">
 function updatep(e)
 {
@@ -44,6 +59,51 @@ function updatep(e)
 </script>
 </head>
 <body>
+<!-- banner -->
+	<div class="banner1">
+		<div class="container">
+<!-- header -->
+			<div class="header">	
+					<div class="logo">
+					   <a href="index.html"><i class="glyphicon glyphicon-plus" aria-hidden="true"></i>Medical Clinic<span>We Work For Your Health</span></a>
+					</div>
+					<div class="top-nav">
+						<span class="menu"><img src="images/menu.png" alt=" " /></span>
+						<ul class="nav">
+							<li class="active"><a href="patientindex.html">Home</a></li>
+							<li><a href= "#DocShow">DoctorShow</a></li>
+							<li><a href="#AboutUS">AboutUs</a></li>
+							<li><a href="appointment.jsp">Appointment</a></li>
+							<li class="dropdown"><s:a href="#" data-toggle="dropdown" class="dropdown-toggle">${user}<strong class="caret"></strong></s:a>
+								<ul class="dropdown-menu">
+									<li>
+										 <a href="http://localhost:8080/HospitalS/patientSelfInfo.action">Selfmanagement</a>
+									</li>
+									<li>
+										 <a href="http://localhost:8080/HospitalS/Logoff.action">Logoff</a>
+									</li>
+									<li>
+										 <a href="http://localhost:8080/HospitalS/query.action">resmanagement</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+								<!-- script-for-menu -->
+								 <script>
+								   $( "span.menu" ).click(function() {
+									 $( "ul.nav" ).slideToggle( 300, function() {
+									 // Animation complete.
+									  });
+									 });
+								</script>
+								<!-- /script-for-menu -->
+					</div>
+					<div class="clearfix"> </div>
+			</div>
+<!-- //header -->	
+		</div>
+	</div>
+<!-- //banner -->
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
@@ -59,9 +119,9 @@ function updatep(e)
 						<font size=3>个人信息</font>
 					</h3>
 				</div>
-				<table class="table table-hover table-striped">
+				<table class="table table-bordered">
 				<tbody>
-					<tr class="success">
+					<tr>
 						<td>
 							用户名（PatientID）
 						</td>
@@ -69,7 +129,7 @@ function updatep(e)
 							<p id="id"><s:property value="pt.PatientID" /></p>
 						</td>
 					</tr>
-					<tr>
+					<tr class="info">
 						<td>
 							姓名（PatientName）
 						</td>
@@ -77,7 +137,7 @@ function updatep(e)
 							<p id="name"><s:property value=" pt.PatientName" /></p>
 						</td>
 					</tr>
-					<tr class="success">
+					<tr>
 						<td>
 							年龄（PatientAge）
 						</td>
@@ -85,7 +145,7 @@ function updatep(e)
 							<p id="age"><s:property value="pt.PatientAge" /></p>
 						</td>
 					</tr>
-					<tr>
+					<tr class="info">
 						<td>
 							性别（PatientSex）
 						</td>
@@ -93,7 +153,7 @@ function updatep(e)
 							<p id="sex"><s:property value=" pt.PatientSex" /></p>
 						</td>
 					</tr>
-					<tr class="success">
+					<tr>
 						<td>
 							联系方式(Contact)
 						</td>
@@ -101,7 +161,7 @@ function updatep(e)
 							<p id="contact"><s:property value="pt.PatientContact" /></p>
 						</td>
 					</tr>
-					<tr>
+					<tr class="info">
 						<td>
 							病情详情（Detailillness）
 						</td>
@@ -117,7 +177,7 @@ function updatep(e)
 							<p id="blood"><s:property value="pt.Bloodtype" /></p>
 						</td>
 					</tr>
-					<tr>
+					<tr class="info">
 						<td>
 							密码（Pkey）
 						</td>
@@ -129,7 +189,7 @@ function updatep(e)
 				</table>
 			</div>
 			<div>
-				<button type="button" class="btn btn-default active" data-toggle="modal" data-target="#BModal">修改个人信息</button>&nbsp
+				<button type="button" class="btn btn-default" data-toggle="modal" data-target="#BModal">修改个人信息</button>&nbsp
 					<div class="modal fade" id="BModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 				  		<div class="modal-dialog">
 				    		<div class="modal-content">
@@ -167,11 +227,86 @@ function updatep(e)
 				    		</div>
 				  		</div>
 					</div>
-				<a class="btn btn-default active" href="PatientIndex.jsp">修改密码</a>
-				<a class="btn btn-default active" href="PatientIndex.jsp">返回首页>></a>
+				<a class="btn btn-default" href="patientindex.jsp">修改密码</a>
+				<a class="btn btn-default" href="patientindex.jsp">返回首页>></a>
 			</div>
+			<br>
 		</div>
 	</div>
 </div>
+<!-- footer -->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-grids">
+				<div class="col-md-3 footer-grid">
+					<h3>patients & Visitors</h3>
+					<ul>
+						<li><a href="#">Find a Doctor</a></li>
+						<li><a href="#">Information For patients</a></li>
+						<li><a href="#">Information For visitors</a></li>
+						<li><a href="#">Pay Hospital Bills In Online</a></li>
+						<li><a href="#">Financial Services</a></li>
+						<li><a href="#">Our Commitment to</a></li>
+						<li><a href="#">Quality Care</a></li>
+						<li><a href="#">Events</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<h3>research</h3>
+					<ul>
+						<li><a href="#">Reaserch Highlights</a></li>
+						<li><a href="#">Resources For Professionals</a></li>
+						<li><a href="#">Finding Opportunities</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<h3>education & Training</h3>
+					<ul>
+						<li><a href="#">Patient Health Library</a></li>
+						<li><a href="#">Residency & Fellowship</a></li>
+						<li><a href="#">Information</a></li>
+						<li><a href="#">Nursing Professional</a></li>
+						<li><a href="#">Development</a></li>
+						<li><a href="#">Professional Training</a></li>
+						<li><a href="#">Professional Development</a></li>
+					</ul>
+				</div>
+				<div class="col-md-3 footer-grid">
+					<h3>community</h3>
+					<ul>
+						<li><a href="#">Community Health & Wellness</a></li>
+						<li><a href="#">Community Relations</a></li>
+						<li><a href="#">Community Services & Resources</a></li>
+						<li><a href="#">Community Reports</a></li>
+						<li><a href="#">News & Events</a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="footer-grds">
+				<div class="footer-grds-left">
+					<ul>
+						<li><a href="#">Privacy Policy |</a></li>
+						<li><a href="contact.html">Sitemap |</a></li>
+						<li><a href="#">Terms of Use</a></li>
+					</ul>
+					<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+				</div>
+				<div class="footer-grds-right">
+					<ul>
+						<li><a href="#" class="fa"></a></li>
+						<li><a href="#" class="fb"></a></li>
+						<li><a href="#" class="fc"></a></li>
+						<li><a href="#" class="fd"></a></li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- for bootstrap working -->
+		<script src="js/bootstrap.js"> </script>
+<!-- //for bootstrap working -->
 </body>
 </html>

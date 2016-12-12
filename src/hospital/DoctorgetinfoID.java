@@ -15,9 +15,9 @@ public class DoctorgetinfoID {
 		return dc;
 	}
 	private String doctorID;//?
-	public void setDoctorID(String doctorid)
+	public void setDoctorID(String doctorID)
 	{
-		this.doctorID = doctorid;
+		this.doctorID = doctorID;
 	}
 	public String getDoctorID()
 	{
@@ -32,17 +32,17 @@ public class DoctorgetinfoID {
 		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness","root","123456");
 		System.out.println(doctorID);
 		Statement stmt = con.createStatement();
-		ResultSet rs = stmt.executeQuery("select * from Doctor where DoctorID="+"\""+doctorID+"\"");
+		ResultSet rs = stmt.executeQuery("select * from doctorlist where DoctorID="+"\""+doctorID+"\"");
 		dc = new Doctor();
 		if(rs.next())
 		{
-			System.out.println("找到该医生");
+			System.out.println("找到医生");
 			rs.previous();
 			while(rs.next())
 	        {
 	        	System.out.println(rs.getString(1));
 	        	System.out.println(rs.getString(2));
-	        	System.out.println(rs.getInt(3));
+	        	System.out.println(rs.getString(3));
 	        	System.out.println(rs.getString(4));
 	        	System.out.println(rs.getString(5));
 	        	System.out.println(rs.getString(6));

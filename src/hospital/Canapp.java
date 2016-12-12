@@ -46,7 +46,7 @@ public class Canapp implements Action {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			System.out.println("成功连接到数据库！");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness?useUnicode=true&characterEncoding=utf-8&useSSL=false","root","wan2013");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness?useUnicode=true&characterEncoding=utf-8&useSSL=false","root","123456");
 			stmt = con.createStatement();	       
 		}catch(SQLException e)
 		{

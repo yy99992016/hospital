@@ -10,7 +10,7 @@ import java.sql.Statement;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
 
-public class PatientSelfInfo implements Action {
+public class patientSelfInfo implements Action {
 	private Patient pt =null;
 	public Patient getPt() {
 		return pt;
@@ -22,7 +22,7 @@ public class PatientSelfInfo implements Action {
 	public String execute() throws Exception {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness","root","wan2013");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness","root","123456");
 	        Statement stmt = con.createStatement();
 	        ResultSet rs = stmt.executeQuery("select * from Patient where PatientName=\""+ActionContext.getContext().getSession().get("user")+"\"");
 	        pt = new Patient();

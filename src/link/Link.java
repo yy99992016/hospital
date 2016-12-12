@@ -1,10 +1,10 @@
 package link;
 import java.sql.*;
-public class Link {
+public class link {
 	Connection con =null;
 	Statement state=null;
 	ResultSet res=null;
-	public Link()
+	public link()
 	{
 		try
 		{

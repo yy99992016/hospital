@@ -86,13 +86,15 @@ a:actived{color:red}
 	<table class="tab"><tbody>
 		<s:iterator value="DoctorList" var="i">
 		<tr><td width="140" class="td"><s:property value="#i"/></td><td width="" class="td">
-		<s:url action="searchdoc" var="详细信息" ><s:param name="doctorName" value="#i"></s:param></s:url>
-		<s:a href="%{详细信息}" class="a">详细信息</s:a></td></tr></s:iterator>
+		<s:url action="searchdoc1" var="详细信息" ><s:param name="doctorName" value="#i"></s:param></s:url>
+		<s:a href="%{详细信息}" class="a">详细信息</s:a></td><td width="" class="td">
+		<s:url action="delete" var="预约挂号" ><s:param name="Title" value="#i"></s:param></s:url>
+		<s:a href="%{预约挂号}" class="a">预约挂号</s:a></td></tr></s:iterator>
 		</tbody></table>
 	</div>
 	<div class="div">
 		<table class="r">
-			<tr><td><a href="index.jsp"><button class="but1">返回首页</button></a></td></tr>
+			<tr><td><a href="PatientIndex.jsp"><button class="but1">返回首页</button></a></td></tr>
 		</table>
 	</div>
 </div>

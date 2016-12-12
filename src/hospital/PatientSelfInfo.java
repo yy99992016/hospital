@@ -7,52 +7,27 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.servlet.http.HttpSession;
-import javax.servlet.ServletException; 
-import javax.servlet.http.HttpServlet; 
-import javax.servlet.http.HttpServletRequest; 
-import javax.servlet.http.HttpServletResponse;
-
-
-
-
-
-
+import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionContext;
 
-import link.Link;
-public class Login{
+public class PatientSelfInfo implements Action {
 	private Patient pt =null;
-	public Patient getPt()
-	{
+	public Patient getPt() {
 		return pt;
 	}
-	private String patientID;
-	private String pkey;
-	public void setPatientID(String p_id)
-	{
-		this.patientID = p_id;
+	public void setPt(Patient pt) {
+		this.pt = pt;
 	}
-	public String getPatientID()
-	{
-		return patientID;
-	}
-	public void setPkey(String p_key)
-	{
-		this.pkey = p_key;
-	}
-	public String getPkey()
-	{
-		return pkey;
-	}
-	public String execute(){
+	@Override
+	public String execute() throws Exception {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness","root","wan2013");
 	        Statement stmt = con.createStatement();
-	        ResultSet rs = stmt.executeQuery("select * from Patient where PatientID=\""+patientID+"\"");
+	        ResultSet rs = stmt.executeQuery("select * from Patient where PatientName=\""+ActionContext.getContext().getSession().get("user")+"\"");
 	        pt = new Patient();
 			if(rs.next()){
+
 				System.out.println(rs.getString(1));
 	        	System.out.println(rs.getString(2));
 	        	System.out.println(rs.getInt(3));
@@ -62,18 +37,18 @@ public class Login{
 	        	System.out.println(rs.getString(7));
 	        	System.out.println(rs.getString(8));
 	        	System.out.println(rs.getString(9));
-				if(rs.getString(8).equals(pkey)){
-					ActionContext.getContext().getSession().put("user",rs.getString(2));//登录成功，将用户数据放入到Session中 
-					return "SUCCESS";
-				}
-				else{
-					return "PsError";
-				}
+	        	pt.setPatientID(rs.getString(1));
+		        pt.setPatientName(rs.getString(2));
+		        pt.setPatientAge(rs.getInt(3));
+		        pt.setPatientSex(rs.getString(4));
+		        pt.setPatientContact(rs.getString(5));
+		        pt.setDetailillness(rs.getString(6));
+		        pt.setBloodtype(rs.getString(7));
+		        pt.setPkey(rs.getString(8));
+		        pt.setPkey1(rs.getString(9));
 				
 			}
-			else{
-				return "NoUser";
-			}
+			return "SUCCESS";
 		}catch(SQLException e)
 		{
 			System.out.println("Error:数据库连接错误!");
@@ -84,4 +59,5 @@ public class Login{
 			return "FAIL";
 		}
 	}
+
 }

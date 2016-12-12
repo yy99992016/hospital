@@ -10,18 +10,62 @@
     <package name="hospital" extends="struts-default" namespace="/">
     	<action name="searchdoc" class="hospital.Doctorgetinfo">
 		<result name="SUCCESS">doctorinfo.jsp</result>
-		<result name="FAIL">fail.jsp</result>
+		<result name="FAIL">doctorInforFail.jsp</result>
+		</action>
+    	<action name="searchdoc1" class="hospital.Doctorgetinfo">
+		<result name="SUCCESS">Patientdoctorinfo.jsp</result>
+		<result name="FAIL">doctorInforFail.jsp</result>
 		</action>
 		<action name="doctorrecom" class="hospital.Doctorrecommend">
 			<result name="SUCCESS">DoctorList.jsp</result>
 			<result name="FAIL">fail.jsp</result>
 		</action>
+		<action name="patdoctorrecom" class="hospital.PatDoctorrecommend">
+			<result name="SUCCESS">PatDoctorList.jsp</result>
+			<result name="FAIL">fail.jsp</result>
+		</action>
+		<action name="searchdocid" class="hospital.DoctorgetinfoID">
+			<result name="SUCCESS">doctorinfo.jsp</result>
+			<result name="FAIL">fail.jsp</result>
+		</action>
 		<action name="jump1" class="hospital.jump1">
 			<result name="SUCCESS">register.jsp</result>
 		</action>
-		<action name="login" class="hospital.Login">
-			<result name="SUCCESS">register.jsp</result>
+		<action name="logoff" class="hospital.Logoff">
+			<result name="SUCCESS">index.jsp</result>
 		</action>
+		<action name="patientSelfInfo" class="hospital.PatientSelfInfo">
+			<result name="SUCCESS">patientSelfInfo.jsp</result>
+		</action>
+		<action name="login" class="hospital.Login">
+			<result name="NoUser">Login_nouser.jsp</result>
+			<result name="PsError">PsError.jsp</result>
+			<result name="SUCCESS">PatientIndex.jsp</result>
+		</action>
+		<action name="patientreg" class="hospital.Register">
+            <result name="SUCCESS">PatientIndex.jsp</result>
+            <result name="Password1">registerKeyerror.jsp</result>
+            <result name="UserExist">registerUserexist.jsp</result>
+            <result name="FAIL">fail.jsp</result>
+      	</action>
+		<action name="appointment" class="hospital.Appointment" method="execute">
+			<result name="App">AppList.jsp</result>
+			<result name="NoDoc">NoDoc.jsp</result>
+		</action>
+		<action name="appsuc" class="hospital.appsuc">
+			<result name="AppSuc">AppSuc.jsp</result>
+		</action>
+		<action name="query" class="hospital.Query">
+			<result name="SUC">querylist.jsp</result>
+			<result name="NoApp">noapp.jsp</result>
+		</action>
+		<action name="canapp" class="hospital.Canapp">
+			<result name="SUC">cansuc.jsp</result>
+		</action>
+      	<action name="updatep" class="hospital.patientInfoUpdate">
+            <result name="SUCCESS">PatientIndex.jsp</result>
+            <result name="FAIL">fail.jsp</result>
+      	</action>
      </package>
 
  

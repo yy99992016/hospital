@@ -9,7 +9,7 @@ import java.util.*;
 
 import com.opensymphony.xwork2.ActionContext;
 
-public class Doctorrecommend {
+public class PatDoctorrecommend {
 	private Doctor dc = null;
 	public ArrayList<String> DoctorList = new ArrayList<String>();
 	public Doctor getDc()

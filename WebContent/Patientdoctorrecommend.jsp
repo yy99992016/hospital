@@ -5,17 +5,22 @@
 <html lang="zh-CN">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<!-- 新 Bootstrap 核心 CSS 文件 -->
+
 <link href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-<!-- 可选的Bootstrap主题文件（一般不使用） -->
+
 <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap-theme.min.css"></script>
 <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
 <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<title>医生检索</title>
+<title>医生推荐</title>
 </head>
 <body>
+	<div>
+				<a href="http://localhost:8080/Hospital/logoff.action" style="float:right;">退出</a>
+		<a href="http://localhost:8080/Hospital/patientSelfInfo.action" style="float:right;">${user}</a>
+	
+	</div>
 <br>
 <br>
 <div class="container">
@@ -29,39 +34,37 @@
 			<br>
 			<br>
 			<ul class="nav nav-tabs">
+				<li >
+					 <a href="PatientIndex.jsp">首页</a>
+				</li>
 				<li>
-					 <a href="index.jsp">首页</a>
-				</li>
-				<li class = "active">
-					 <a href="doctorSearch.jsp">医生检索</a>
+					 <a href="PatientdoctorSearch.jsp">医生检索</a>
 				</li>
 				<li >
-					 <a href="doctorinfo.jsp">医生信息查询</a>
+					 <a href="Patientdoctorinfo.jsp">医生信息查询</a>
+				</li>
+				<li class = "active" >
+					 <a href="Patientdoctorrecommend.jsp">按病情推荐医生</a>
 				</li>
 				<li >
-					 <a href="doctorrecommend.jsp">按病情推荐医生</a>
+					 <a href="appointment.jsp">预约</a>
 				</li>
 				<li >
-					 <a href="">个人管理</a>
-				</li>
-				<li >
-					 <a href="">预约管理</a>
+					 <a href="query.jsp">预约管理</a>
 				</li>
 			</ul>
-			<br>
-			<br>
-			<form class="form-horizontal" role="form" action="searchdoc" >
+		</div>
+			<form class="form-horizontal" role="form" action="patdoctorrecom" >
 				<div class="form-group">
-					 <label for="inputDoc" class="col-sm-2 text-center" >按医生姓名进行检索:</label>
+					 <label for="inputDoc" class="col-sm-2 text-center" >按病情查询:</label>
 					<div class="col-sm-7">
-						<input type="text" class="form-control" name ="doctorName" id="inputDoc"  placeholder="请输入想要查询的医生姓名（Name）:">
+						<input type="text" class="form-control" name ="Disease" id="inputDoc"  placeholder="请输入查询病症:">
 					</div>
 					<div class=" col-sm-1 text-center">
 						 <button type="submit" class="btn btn-default active">检索</button>
 					</div>
 				</div>
 			</form>
-		</div>
 	</div>
 </div>
 </body>

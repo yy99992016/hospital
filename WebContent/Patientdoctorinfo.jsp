@@ -17,6 +17,12 @@
 <title>医生<s:property value="dc.DoctorName" />的详细信息</title>
 </head>
 <body>
+	<div>
+				<s:a href="http://localhost:8080/Hospital/logoff.action" style="float:right;">退出</s:a>
+	
+		<s:a href="http://localhost:8080/Hospital/patientSelfInfo.action" style="float:right;">${user}</s:a>
+
+	</div>
 <div class="container">
 	<div class="row clearfix">
 		<div class="col-md-12 column">
@@ -27,16 +33,22 @@
 			</div>
 			<ul class="nav nav-tabs">
 				<li>
-					 <a href="index.jsp">首页</a>
+					 <a href="PatientIndex.jsp">首页</a>
 				</li>
 				<li>
-					 <a href="doctorSearch.jsp">医生检索</a>
+					 <a href="PatientdoctorSearch.jsp">医生检索</a>
 				</li>
 				<li class = "active">
-					 <a href="doctorinfo">医生信息查询</a>
+					 <a href="Patientdoctorinfo">医生信息查询</a>
 				</li>
 				<li >
-					 <a href="doctorrecommend.jsp">按病情推荐医生</a>
+					 <a href="Patientdoctorrecommend.jsp">按病情推荐医生</a>
+				</li>
+				<li >
+					 <a href="appointment.jsp">个人管理</a>
+				</li>
+				<li >
+					 <a href="query.jsp">预约管理</a>
 				</li>
 			</ul>
 			<br>
@@ -109,8 +121,7 @@
 				</table>
 			</div>
 			<div>
-			<button type="button" class="btn btn-default active" >预约挂号</button>
-			<a class="btn btn-default active" href="index.jsp">返回首页>></a>
+			<a class="btn btn-default active" href="PatientIndex.jsp">返回首页>></a>
 			</div>
 		</div>
 	</div>

@@ -22,7 +22,7 @@ function patientlog(e)
 		patientID = $("#patientID").text();
 	if(pkey == "")
 		pkey = $("#pkey").text();
-	window.location.href="login?patientID="+patientID+
+	window.location.href="patientlog?patientID="+patientID+
 			"&pkey="+pkey;
 }
 </script>
@@ -50,7 +50,7 @@ function patientlog(e)
 									  </div>
 									  <div class="form-group">
 									    <label for="inputPkey">密码:</label>
-									    <input type="password" class="form-control" id="inputPkey" placeholder="请输入密码">
+									    <input type="text" class="form-control" id="inputPkey" placeholder="请输入密码">
 									  </div>
 									  <button type="button" class="btn btn-default active" onclick="patientlog(this);">登录</button>
 									</form>
@@ -65,101 +65,47 @@ function patientlog(e)
 							<li><a href="help.jsp">帮助</a></li>
 				</ul>
 			</nav>
-			
-			
 			<div class="page-header">
 				<h1  class="text-center">
-					<strong>自助挂号系统  </strong> <small>by Mafaldae</small>
+					<strong>自主挂号系统  </strong> <small>by Mafaldae</small>
 				</h1>
 			</div>
 			
 			<br>
 			<br>
 			<ul class="nav nav-tabs">
-				<li class="active">
-					 <a href="">首页</a>
+				<li>
+					 <a href="index.jsp">首页</a>
 				</li>
 				<li>
 					 <a href="doctorSearch.jsp">医生检索</a>
 				</li>
-				<li >
+				<li class = "active">
 					 <a href="doctorrecommend.jsp">按病情推荐医生</a>
 				</li>
 				<li >
-					 <a href="selfSearch.jsp">个人搜索</a>
-				</li>
-				<li >
-					 <a href="selfinfo.jsp">个人管理</a>
+					 <a href="">个人管理</a>
 				</li>
 				<li >
 					 <a href="">预约管理</a>
 				</li>
 			</ul>
-			
 			<br>
 			<br>
-			<div class="col-sm-2 text-center"></div>
-			<div class="carousel slide col-sm-8 text-center" id="carousel-54895">
-				<ol class="carousel-indicators">
-					<li data-target="#carousel-54895" data-slide-to="0">
-					</li>
-					<li data-target="#carousel-54895" data-slide-to="1">
-					</li>
-					<li class="active" data-target="#carousel-54895" data-slide-to="2">
-					</li>
-				</ol>
-				<div class="carousel-inner">
-					<div class="item active">
-						<img alt="Cinque Terre" width="1000" height="500" src="E:\软件工程\项目\picture\1.png" class="img-rounded img-responsive">
-						<div class="carousel-caption">
-							<h4>
-								First Exhibition
-							</h4>
-							<p>
-								按病情推荐医生
-							</p>
-						</div>
+			<form class="form-horizontal" role="form" action="doctorrecom" >
+				<div class="form-group">
+					 <label for="inputDoc" class="col-sm-2 text-center" >按病情查询:</label>
+					<div class="col-sm-7">
+						<input type="text" class="form-control" name ="Disease" id="inputDoc"  placeholder="请输入查询病症:">
 					</div>
-					<div class="item">
-						<img alt="Cinque Terre" width="1000" height="500" src="E:\软件工程\项目\picture\2.png" class="img-rounded img-responsive">
-						<div class="carousel-caption">
-							<h4>
-								Second Exhibition
-							</h4>
-							<p>
-								医生信息展示
-							</p>
-						</div>
+					<div class=" col-sm-1 text-center">
+						 <button type="submit" class="btn btn-default active">检索</button>
 					</div>
-					<div class="item">
-						<img alt="Cinque Terre" width="1000" height="500" src="E:\软件工程\项目\picture\3.png" class="img-rounded img-responsive">
-						<div class="carousel-caption">
-							<h4>
-								Third Exhibition
-							</h4>
-							<p>
-								预约管理
-							</p>
-						</div>
-					</div>
-				</div> <a class="left carousel-control" href="#carousel-54895" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-54895" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-			</div>
-			<div class="col-sm-2 text-center"></div>
-			
-			<footer>
-				<div class="col-sm-12 col-sm-offset-6">
-					<br/>
-					<br/>
-					<address>
-					  <strong>地址：西大直街234;联系电话0421-82868286</strong>
-					  <br/>
-					  Please contact us on 314578@163.com
-					  <br/>
-					  About developer<a href="https://github.com/mafaldae"> Github address</a>
-					  <br>
-					</address>
 				</div>
-			</footer>
+				<div>
+					<p>该病情的医生不存在请重新输入...</p>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>

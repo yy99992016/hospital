@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Insert title here</title>
+<title>无此用户</title>
 </head>
 <body>
 <f:view><?xml version="1.0" encoding="UTF-8" ?>

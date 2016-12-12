@@ -16,6 +16,12 @@
 <title>医生检索</title>
 </head>
 <body>
+	<div>
+				<a href="http://localhost:8080/Hospital/logoff.action" style="float:right;">退出</a>
+	
+		<a href="http://localhost:8080/Hospital/patientSelfInfo.action" style="float:right;">${user}</a>
+	
+	</div>
 <br>
 <br>
 <div class="container">
@@ -30,27 +36,27 @@
 			<br>
 			<ul class="nav nav-tabs">
 				<li>
-					 <a href="index.jsp">首页</a>
+					 <a href="PatientIndex.jsp">首页</a>
 				</li>
 				<li class = "active">
-					 <a href="doctorSearch.jsp">医生检索</a>
+					 <a href="PatientdoctorSearch.jsp">医生检索</a>
 				</li>
 				<li >
-					 <a href="doctorinfo.jsp">医生信息查询</a>
+					 <a href="Patientdoctorinfo.jsp">医生信息查询</a>
 				</li>
 				<li >
-					 <a href="doctorrecommend.jsp">按病情推荐医生</a>
+					 <a href="Patientdoctorrecommend.jsp">按病情推荐医生</a>
 				</li>
 				<li >
-					 <a href="">个人管理</a>
+					 <a href="appointment.jsp">个人管理</a>
 				</li>
 				<li >
-					 <a href="">预约管理</a>
+					 <a href="query.jsp">预约管理</a>
 				</li>
 			</ul>
 			<br>
 			<br>
-			<form class="form-horizontal" role="form" action="searchdoc" >
+			<form class="form-horizontal" role="form" action="searchdoc1" >
 				<div class="form-group">
 					 <label for="inputDoc" class="col-sm-2 text-center" >按医生姓名进行检索:</label>
 					<div class="col-sm-7">

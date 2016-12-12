@@ -5,28 +5,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
 <head>
-<meta http-equiv="refresh" content="3;url=Login.jsp"/>
-<title>PasswordError</title>
-</head>
-<body><?xml version="1.0" encoding="UTF-8" ?>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
-<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Insert title here</title>
-</head>
-<body>
-<f:view><?xml version="1.0" encoding="UTF-8" ?>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="s" uri="/struts-tags" %>    
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Login</title>
+<title>登陆</title>
 <style type="text/css">
  body{
   background-image:url(Login.jpg);
@@ -88,11 +68,9 @@
 <body>
 <div class="main">
 	<div class="center">
-		<p>密码错误</p>
-	</div>
-	<div class="center">
 		<form action="login" method="post" name="forml">
 			<table width="200" border="0" cellspacing="10" cellpadding="10" class="login_table">
+				<tr><td>密码错误</td></tr>
 				<tr><td width="50">Username </td><td width="100"><input type="text" name="Username"/></td></tr>
 				<tr><td width="50">Password </td><td width="100"><input type="password" name="Password"/></td></tr>
 		    </table>
@@ -106,12 +84,5 @@
 		</table>
 	</div>
 </div>
-</body>
-</html>
-
-</f:view>
-</body>
-</html>
-
 </body>
 </html>

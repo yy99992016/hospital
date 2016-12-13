@@ -18,7 +18,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Archivo+Narrow:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
 
-<!-- 后加的js -->
+<!-- 后加的js,css -->
+<style type="text/css">
+.we p{
+	font-size:15px;
+	color:#999;
+	line-height:1.8em;
+	margin:0;
+	
+}
+</style>
 <script type="text/javascript">
 function show(e)
 {
@@ -45,7 +54,7 @@ function patientlog(e)
 <!-- header -->
 			<div class="header" >	
 					<div class="logo">
-					   <a href="index.html"><i class="glyphicon glyphicon-plus" aria-hidden="true"></i>自助挂号<span>为您的健康服务</span></a>
+					   <a href="index.html"><i class="glyphicon glyphicon-plus" aria-hidden="true"></i>自助挂号系统<span>为您的健康服务</span></a>
 					</div>
 					<div class="top-nav">
 						<span class="menu"><img src="images/menu.png" alt=" " /></span>
@@ -53,8 +62,7 @@ function patientlog(e)
 							<li class="active"><a href="index.html">主页</a></li>
 							<li><a href="#News">新闻</a></li>
 							<li><a href= "#DocShow">医生展示</a></li>
-							<li><a href="#AboutUS">帮助</a></li>
-							<li><a href="appointment.jsp">预约</a></li>
+							<li><a href="services.html">帮助</a></li>
 							<li><a data-toggle="modal" data-target="#BModal" href="">登陆</a>
 							<div class="modal fade" id="BModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 							  <div class="modal-dialog">
@@ -98,16 +106,16 @@ function patientlog(e)
 			</div>
 <!-- //header -->
 			<div class="banner-info" id="searchthings">
-				<form action="searchdocid">
-					<input type="text" name ="doctorID" value="Search DoctorID..." onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '按医生编号查找...';}" required="">
+				<form action="searchdocid" id = "sea1">
+					<input type="text" name ="doctorID" value="按医生编号查找..." onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '按医生编号查找...';}" required="">
 					<input type="submit" value="搜索一下你就知道" >
 				</form>
-				<form action="searchdocname">
-					<input type="text" name ="doctorName" value="Search DoctorName..." onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '按医生姓名查找...';}" required="">
+				<form action="searchdocname" id = "sea2">
+					<input type="text" name ="doctorName" value="按医生姓名查找..." onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '按医生姓名查找...';}" required="">
 					<input type="submit" value="搜索一下你就知道" >
 				</form>
-				<form action="doctorrecom">
-					<input type="text" name ="Disease" value="Search Disease..." onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '按疾病查找...';}" required="">
+				<form action="doctorrecom" id = "sea3">
+					<input type="text" name ="Disease" value="按疾病查找..." onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '按疾病查找...';}" required="">
 					<input type="submit" value="搜索一下你就知道" >
 				</form>
 			</div>
@@ -119,21 +127,19 @@ function patientlog(e)
 		<div class="banner-bottom-grid">
 			<div class="banner-bottom-left">
 				<div class="banner-bottom-left1">
-					<h4>01.ICU护士下夜班偶遇路人 跪地CPR为救治赢得宝贵时间</h4>
-					<p>本报讯 （记者 赵明曦 郭晶）“双手手指紧紧相扣，手掌根部垂直连续心外按压；一手按下额头，一手托起下巴，深吸一口气进而连续地人工呼吸……”这个情节不是医院的CPR培训，也不是在医院里的抢救，而是发生在东单路口的生死时速。
-2016年10月21日上午，重症医学科王双玲护士夜班返回家的途中发现前方有人倒地，职业的敏感性和使命感，让她立刻奔向前去。王双玲熟练。。。</p>
+					<h3>01.喜讯：我院在市规培评优表彰中斩获多奖</h3>
+					<p>本报讯 （记者 傅谭娉）由北京医学教育协会和北京医学奖励基金会联合主办的“2016年度北京市住院医师规范化培训评优表彰活动”近日公布评选结果，我院荣获“最佳组织奖”。。。</p>
 					<div class="more m1">
-						<a href="News1.jsp">阅读详情</a>
+						<a href="single.html">阅读详情</a>
 					</div>
 				</div>
 			</div>
 			<div class="banner-bottom-right">
 				<div class="banner-bottom-right1">
-					<h3>02. 发挥党员先锋模范作用 全面提升医疗服务能力</h3>
-					<p>今年，中央决定在全党开展以“深入学习党章党规，深入学习习近平总书记系列重要讲话，做合格的共产党员”学习教育活动。儿科党支部积极响应中央号召，将学习任务融入员工日常教育管理中，着力打造一支有信仰、有信念、有纪律、有担当的党员干部队伍。
-“两学一做”要落实到强化理想信念上。习近平总书记强调指出，理想信念是共产党人的精神之“钙”，必须加强思想政治建设，解决好世界。。。</p>
+					<h3>02. 医疗设施展示</h3>
+					<p>本院先进的医疗设施</p>
 					<div class="more m1">
-						<a href="News1.jsp">阅读详情</a>
+						<a href="gallery.html">阅读详情</a><br/><br/><br/><br/><br/><br/>
 					</div>
 				</div>
 			</div>
@@ -142,10 +148,10 @@ function patientlog(e)
 		<div class="banner-bottom-grid">
 			<div class="banner-bottom-left banner-bottom-lft1">
 				<div class="banner-bottom-left1">
-					<h3>03. 喜讯：我院在市规培评优表彰中斩获多奖</h3>
-					<p>本报讯 （记者 傅谭娉）由北京医学教育协会和北京医学奖励基金会联合主办的“2016年度北京市住院医师规范化培训评优表彰活动”近日公布评选结果，我院荣获“最佳组织奖”。。。</p>
+					<h3>03. ICU护士下夜班偶遇路人 跪地CPR为救治赢得宝贵时间</h3>
+					<p>本报讯 （记者 赵明曦 郭晶）“双手手指紧紧相扣，手掌根部垂直连续心外按压；一手按下额头，一手托起下巴，深吸一口气进而连续地人工呼吸……”这个情节不是医院的CPR培训，也不是在医院里的抢救，而是发生在东单路口的生死时速。</p>
 					<div class="more m1">
-						<a href="News1.jsp">阅读详情</a>
+						<a href="single2.html">阅读详情</a>
 					</div>
 				</div>
 			</div>
@@ -154,7 +160,7 @@ function patientlog(e)
 					<h3>04. 第十五届中国人口文化奖揭晓 我院荣获多项奖项</h3>
 					<p>本报讯 （记者 郭晶）第十五届中国人口文化奖文学美术摄影类组委会近日在北京召开，第十一届全国政协副主席、中国人口文化促进会会长李。。.</p>
 					<div class="more m1">
-						<a href="News1.jsp">阅读详情</a>
+						<a href="single1.html">阅读详情</a><br/><br/><br/>
 					</div>
 				</div>
 			</div>
@@ -232,50 +238,42 @@ function patientlog(e)
 				<div class="col-md-4 about-grid">
 					<img src="images/5.jpg" alt=" " class="img-responsive" />
 					<p> 保定市第一中hjddgjfhghjkfdhkjlhlkj\sghkhjgfskjjkhlghgjk就介绍随便写点</p>
-					<ul>
-						<li><a href="#" class="facebook"></a></li>
-						<li><a href="#" class="twitter"></a></li>
-						<li><a href="#" class="g"></a></li>
-						<li><a href="#" class="in"></a></li>
-					</ul>
 				</div>
 				<div class="col-md-4 about-grid abt-grid">
-					<h2>Advantages</h2>
+					<h2>优点</h2>
 					<ul>
-						<li><a href="#">健康医疗环境</a></li>
-						<li><a href="#">强大的医生条件</a></li>
-						<li><a href="#">先进的医疗技术</a></li>
-						<li><a href="#">快速就医</a></li>
-						<li><a href="#">实在想不出来了</a></li>
+						<li>健康医疗环境</li>
+						<li>强大的医生条件</li>
+						<li>先进的医疗技术</li>
+						<li>快速就医</li>
+						<li>实在想不出来了</li>
 					</ul>
-					<h2>What We Offer</h2>
+					<h2>提供服务</h2>
 					<ul>
-						<li><a href="#">自主搜索医生</a></li>
-						<li><a href="#">按病情推荐医生</a></li>
-						<li><a href="#">自主挂号</a></li>
-						<li><a href="#">医疗小指南</a></li>
-						<li><a href="#">预约管理</a></li>
+						<li>自主搜索医生</li>
+						<li>按病情推荐医生</li>
+						<li>自主挂号</li>
+						<li>医疗指南</li>
+						<li>个人管理</li>
+						<li>预约管理</li>
 					</ul>
 				</div>
 				<div class="col-md-4 about-grid abt-grid1">
-					<h1>Meet Our Staff</h1>
+					<h1>我们的员工</h1>
 					<div class="banner-bottom-video-grid-left">
 					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 					  <div class="panel panel-default">
 						<div class="panel-heading" role="tab" id="headingOne">
 						  <h4 class="panel-title">
 							<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							  Staff Member
+							  成员
 							</a>
 						  </h4>
 						</div>
 						<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
 						  <div class="panel-body pannel-img">
-							<p>yy</p>
+							<p>于洋</p>
 							<ul>
-								<li><a href="#" class="f"></a></li>
-								<li><a href="#" class="f1"></a></li>
-								<li><a href="#" class="f2"></a></li>
 							</ul>
 						  </div>
 						</div>
@@ -284,17 +282,14 @@ function patientlog(e)
 						<div class="panel-heading" role="tab" id="headingTwo">
 						  <h4 class="panel-title">
 							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-							  Staff Member
+							  成员
 							</a>
 						  </h4>
 						</div>
 						<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 						   <div class="panel-body pannel-img1">
-							<p>Amy.</p>
+							<p>郭鑫</p>
 							<ul>
-								<li><a href="#" class="f"></a></li>
-								<li><a href="#" class="f1"></a></li>
-								<li><a href="#" class="f2"></a></li>
 							</ul>
 						  </div>
 						</div>
@@ -303,22 +298,18 @@ function patientlog(e)
 						<div class="panel-heading" role="tab" id="headingThree">
 						  <h4 class="panel-title">
 							<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-							  Staff Member
+							  成员
 							</a>
 						  </h4>
 						</div>
 						<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
 						   <div class="panel-body pannel-img2">
-							<p>Jack</p>
+							<p id = "we">马昊楠</p>
 							<ul>
-								<li><a href="#" class="f"></a></li>
-								<li><a href="#" class="f1"></a></li>
-								<li><a href="#" class="f2"></a></li>
 							</ul>
 						  </div>
 						</div>
 					  </div>
-					  
 				</div>
 				</div>
 				</div>
@@ -330,68 +321,9 @@ function patientlog(e)
 <!-- footer -->
 	<div class="footer">
 		<div class="container">
-			<div class="footer-grids">
-				<div class="col-md-3 footer-grid">
-					<h3>patients & Visitors</h3>
-					<ul>
-						<li><a href="#">Find a Doctor</a></li>
-						<li><a href="#">Information For patients</a></li>
-						<li><a href="#">Information For visitors</a></li>
-						<li><a href="#">Pay Hospital Bills In Online</a></li>
-						<li><a href="#">Financial Services</a></li>
-						<li><a href="#">Our Commitment to</a></li>
-						<li><a href="#">Quality Care</a></li>
-						<li><a href="#">Events</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 footer-grid">
-					<h3>research</h3>
-					<ul>
-						<li><a href="#">Reaserch Highlights</a></li>
-						<li><a href="#">Resources For Professionals</a></li>
-						<li><a href="#">Finding Opportunities</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 footer-grid">
-					<h3>education & Training</h3>
-					<ul>
-						<li><a href="#">Patient Health Library</a></li>
-						<li><a href="#">Residency & Fellowship</a></li>
-						<li><a href="#">Information</a></li>
-						<li><a href="#">Nursing Professional</a></li>
-						<li><a href="#">Development</a></li>
-						<li><a href="#">Professional Training</a></li>
-						<li><a href="#">Professional Development</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 footer-grid">
-					<h3>community</h3>
-					<ul>
-						<li><a href="#">Community Health & Wellness</a></li>
-						<li><a href="#">Community Relations</a></li>
-						<li><a href="#">Community Services & Resources</a></li>
-						<li><a href="#">Community Reports</a></li>
-						<li><a href="#">News & Events</a></li>
-					</ul>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
 			<div class="footer-grds">
 				<div class="footer-grds-left">
-					<ul>
-						<li><a href="#">Privacy Policy |</a></li>
-						<li><a href="contact.html">Sitemap |</a></li>
-						<li><a href="#">Terms of Use</a></li>
-					</ul>
-					<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
-				</div>
-				<div class="footer-grds-right">
-					<ul>
-						<li><a href="#" class="fa"></a></li>
-						<li><a href="#" class="fb"></a></li>
-						<li><a href="#" class="fc"></a></li>
-						<li><a href="#" class="fd"></a></li>
-					</ul>
+					<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/"></a></p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>

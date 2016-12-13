@@ -127,6 +127,21 @@ span.menu{
 	-ms-border-radius: 5px;
 	padding:13px 10px;
 }
+.banner-info input[type="password"]{
+	background:#fff;
+	color:#B8B7B7;
+	font-size:14px;
+	width:70%;
+	display:inline-block;
+	outline:none;
+	border:none;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+	-ms-border-radius: 5px;
+	padding:13px 10px;
+}
 .banner-info input[type="submit"]{
 	background:#78AFF0;
 	font-family: 'Archivo Narrow', sans-serif;
@@ -240,18 +255,18 @@ span.menu{
     margin: 0 0 0 6em;
 }
 .banner-bottom-left1 h3,.banner-bottom-right1 h3{
-	font-size:2.5em;
+	font-size:1.5em;
 	color:#F26F62;
 	font-family: 'Archivo Narrow', sans-serif;
 	text-transform:capitalize;
 	margin:0;
 }
 .banner-bottom-left1 p,.banner-bottom-right1 p{
-	font-size:14px;
+	font-size:15px;
 	color:#999;
 	line-height:1.8em;
-	margin:1em 0;
-	width:70%;
+	margin:0;
+	
 }
 .banner-bottom-right1 p{
 	color:#fff;

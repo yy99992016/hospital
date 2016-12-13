@@ -50,25 +50,23 @@ function patientlog(e)
 <!-- header -->
 			<div class="header">	
 					<div class="logo">
-					   <a href="index.html"><i class="glyphicon glyphicon-plus" aria-hidden="true"></i>Medical Clinic<span>We Work For Your Health</span></a>
+					   <a href="patientindex.jsp"><i class="glyphicon glyphicon-plus" aria-hidden="true"></i>自助挂号系统<span>为您的健康服务</span></a>
 					</div>
 					<div class="top-nav">
 						<span class="menu"><img src="images/menu.png" alt=" " /></span>
 						<ul class="nav">
-							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href= #searchthings>Sear&Recom</a></li>
-							<li><a href="gallery.html">SelfManage</a></li>
-							<li><a href="appointment">Appointment</a></li>
+							<li><a href="patientindex.jsp">主页</a></li>
+							<li><a href="appointment.jsp">预约</a></li>
 							<li class="dropdown"><s:a href="#" data-toggle="dropdown" class="dropdown-toggle">${user}<strong class="caret"></strong></s:a>
 								<ul class="dropdown-menu">
 									<li>
-										 <a href="http://localhost:8080/HospitalS/patientSelfInfo.action">Selfmanagement</a>
+										 <a href="http://localhost:8080/HospitalS/patientSelfInfo.action">个人管理</a>
 									</li>
 									<li>
-										 <a href="http://localhost:8080/HospitalS/Logoff.action">Logoff</a>
+										 <a href="http://localhost:8080/HospitalS/Logoff.action">退出</a>
 									</li>
 									<li>
-										 <a href="http://localhost:8080/HospitalS/query.action">resmanagement</a>
+										 <a href="http://localhost:8080/HospitalS/query.action">预约查询</a>
 									</li>
 								</ul>
 							</li>
@@ -98,93 +96,46 @@ function patientlog(e)
 				</h1>
 			</div>
 		</div>
-		<div>
-			<form class="form-horizontal" role="form" action="appointment" method="post">
-			<table>
-				   <caption>${user}预约表</caption>
-				   <tr><th>科室</th><th>医生姓名</th><th>日期</th><th>时间</th><th></th></tr>
-				   <s:iterator value="PatList" var="i">
-				   <tr>
-				   		<td><s:property value="#i.Department"/></td>
-				   		<td><s:property value="#i.Doctor"/></td>
-				   		<td><s:property value="#i.Date"/></td>
-				   		<td><s:property value="#i.Time"/></td>
-				   		<td><s:url action="canapp" var="show" ><s:param name="Date" value="#i.Date"></s:param><s:param name="Time" value="#i.Time"></s:param><s:param name="Department" value="#i.Department"></s:param><s:param name="DocName" value="#i.Doctor"></s:param></s:url><s:a href="%{show}">取消预约</s:a></td>
-				   </s:iterator> 
-			</table>
-		</form>
+		<div class="col-md-1 column">
+		</div>
+		<div class="col-md-10 column">
+				<div class="bs-docs-example">
+					<form class="form-horizontal" role="form" action="appointment" method="post">
+					
+						<table class="table table-striped">
+						   <caption>${user}预约表</caption>
+						   <tr>
+						   <thead>
+						   <th>科室</th>
+						   <th>医生姓名</th>
+						   <th>日期</th>
+						   <th>时间</th>
+						   <th></th>
+						   </tr>
+						   </thead>
+						   <s:iterator value="PatList" var="i">
+						   <tr>
+						   		<td><s:property value="#i.Department"/></td>
+						   		<td><s:property value="#i.Doctor"/></td>
+						   		<td><s:property value="#i.Date"/></td>
+						   		<td><s:property value="#i.Time"/></td>
+						   		<td><s:url action="canapp" var="show" ><s:param name="Date" value="#i.Date"></s:param><s:param name="Time" value="#i.Time"></s:param><s:param name="Department" value="#i.Department"></s:param><s:param name="DocName" value="#i.Doctor"></s:param></s:url><s:a href="%{show}">取消预约</s:a></td>
+						   </s:iterator> 
+						</table>
+					</form>
+				</div>
 		</div>
 	</div>
 </div>
 <!-- footer -->
 	<div class="footer">
 		<div class="container">
-			<div class="footer-grids">
-				<div class="col-md-3 footer-grid">
-					<h3>patients & Visitors</h3>
-					<ul>
-						<li><a href="#">Find a Doctor</a></li>
-						<li><a href="#">Information For patients</a></li>
-						<li><a href="#">Information For visitors</a></li>
-						<li><a href="#">Pay Hospital Bills In Online</a></li>
-						<li><a href="#">Financial Services</a></li>
-						<li><a href="#">Our Commitment to</a></li>
-						<li><a href="#">Quality Care</a></li>
-						<li><a href="#">Events</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 footer-grid">
-					<h3>research</h3>
-					<ul>
-						<li><a href="#">Reaserch Highlights</a></li>
-						<li><a href="#">Resources For Professionals</a></li>
-						<li><a href="#">Finding Opportunities</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 footer-grid">
-					<h3>education & Training</h3>
-					<ul>
-						<li><a href="#">Patient Health Library</a></li>
-						<li><a href="#">Residency & Fellowship</a></li>
-						<li><a href="#">Information</a></li>
-						<li><a href="#">Nursing Professional</a></li>
-						<li><a href="#">Development</a></li>
-						<li><a href="#">Professional Training</a></li>
-						<li><a href="#">Professional Development</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 footer-grid">
-					<h3>community</h3>
-					<ul>
-						<li><a href="#">Community Health & Wellness</a></li>
-						<li><a href="#">Community Relations</a></li>
-						<li><a href="#">Community Services & Resources</a></li>
-						<li><a href="#">Community Reports</a></li>
-						<li><a href="#">News & Events</a></li>
-					</ul>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
 			<div class="footer-grds">
 				<div class="footer-grds-left">
-					<ul>
-						<li><a href="#">Privacy Policy |</a></li>
-						<li><a href="contact.html">Sitemap |</a></li>
-						<li><a href="#">Terms of Use</a></li>
-					</ul>
-					<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
-				</div>
-				<div class="footer-grds-right">
-					<ul>
-						<li><a href="#" class="fa"></a></li>
-						<li><a href="#" class="fb"></a></li>
-						<li><a href="#" class="fc"></a></li>
-						<li><a href="#" class="fd"></a></li>
-					</ul>
+					<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/"></a></p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
-			<br>
 		</div>
 	</div>
 <!-- //footer -->
@@ -193,4 +144,3 @@ function patientlog(e)
 <!-- //for bootstrap working -->
 </body>
 </html>
-

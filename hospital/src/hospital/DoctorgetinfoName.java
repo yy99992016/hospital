@@ -28,7 +28,7 @@ public class DoctorgetinfoName {
 	try{
 		Class.forName("com.mysql.jdbc.Driver");
 		System.out.println("成功连接到数据库！");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness?useUnicode=true&characterEncoding=utf-8&useSSL=false","root","123456");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness?useUnicode=true&characterEncoding=utf-8&useSSL=false","root","wan2013");
 		System.out.println(doctorName);
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery("select * from DoctorList where DoctorName= '"+doctorName+"'");

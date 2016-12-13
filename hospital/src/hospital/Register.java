@@ -19,8 +19,37 @@ public class Register {
 	private String patientContact;//联系方式(手机或邮箱)
 	private String detailillness;//详细病情
 	private String bloodtype;//血型
+	private String utype;
+	private String Area;
+	private String Position;
+	private String Office;
 	private String pkey;
 	private String pkey1;
+	
+	public String getUtype() {
+		return utype;
+	}
+	public void setUtype(String utype) {
+		this.utype = utype;
+	}
+	public String getArea() {
+		return Area;
+	}
+	public void setArea(String area) {
+		Area = area;
+	}
+	public String getPosition() {
+		return Position;
+	}
+	public void setPosition(String position) {
+		Position = position;
+	}
+	public String getOffice() {
+		return Office;
+	}
+	public void setOffice(String office) {
+		Office = office;
+	}
 	public void setPatientID(String patientID)
 	{
 		this.patientID = patientID;
@@ -98,16 +127,16 @@ public class Register {
 	{
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness","root","123456");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness","root","wan2013");
 	        Statement stmt = con.createStatement();
 	        ResultSet rs = stmt.executeQuery("select * from Patient where PatientID=\""+patientID+"\"");
 	        System.out.println(rs);
 	         if(!rs.next()){
 	        	System.out.println("成到数据库！");
 	        	//rs.previous();
-				if(pkey.equals(pkey1)){
+				if(pkey.equals(pkey1)&&utype.equals("patient")){
 					System.out.println("成到据库！");
-					String sql1 = "insert into patient (patientID,patientName,patientAge,patientSex,patientContact,detailillness,bloodtype,pkey,pkey1) values(\""+patientID+"\",\""+patientName+"\","+patientAge+",\""+patientSex+"\",\""+patientContact+"\",\""+detailillness+"\",\""+bloodtype+"\",\""+pkey+"\",\""+pkey1+"\")";	
+					String sql1 = "insert into patient (patientID,patientName,patientAge,patientSex,patientContact,detailillness,bloodtype,pkey,pkey1,utype) values(\""+patientID+"\",\""+patientName+"\","+patientAge+",\""+patientSex+"\",\""+patientContact+"\",\""+detailillness+"\",\""+bloodtype+"\",\""+pkey+"\",\""+pkey1+"\",\""+utype+"\")";	
 					System.out.println("成到数据库！");
 					System.out.println(sql1);
 					ActionContext.getContext().getSession().put("user",patientName);//注册成功，将用户数据放入到Session中 
@@ -116,7 +145,19 @@ public class Register {
 				    System.out.println(result);
 				    stmt.close();
 				    return "SUCCESS";
-
+				}
+				else if(pkey.equals(pkey1)&&utype.equals("doctor")){
+					System.out.println("成到据库！");
+					String sql1 = "insert into patient (patientID,patientName,patientAge,patientSex,patientContact,detailillness,bloodtype,pkey,pkey1,utype,Department,Position,Office) values(\""+patientID+"\",\""+patientName+"\","+patientAge+",\""+patientSex+"\",\""+patientContact+"\",\""+detailillness+"\",\""+bloodtype+"\",\""+pkey+"\",\""+pkey1+"\",\""+utype+"\",\""+Area+"\",\""+Position+"\",\""+Office+"\")";	
+					System.out.println("成到数据库！");
+					System.out.println(sql1);
+					ActionContext.getContext().getSession().put("user",patientName);
+					ActionContext.getContext().getSession().put("Department",Area);//注册成功，将用户数据放入到Session中 
+					stmt = con.createStatement();
+				    int result = stmt.executeUpdate(sql1);
+				    System.out.println(result);
+				    stmt.close();
+				    return "SUCCESS1";
 				}
 				else{
 					return "Password1";

@@ -48,7 +48,7 @@ public class Login{
 	public String execute(){
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness","root","123456");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness","root","wan2013");
 	        Statement stmt = con.createStatement();
 	        ResultSet rs = stmt.executeQuery("select * from Patient where PatientID=\""+patientID+"\"");
 	        pt = new Patient();
@@ -62,9 +62,14 @@ public class Login{
 	        	System.out.println(rs.getString(7));
 	        	System.out.println(rs.getString(8));
 	        	System.out.println(rs.getString(9));
-				if(rs.getString(8).equals(pkey)){
+				if(rs.getString(8).equals(pkey)&&rs.getString(10).equals("patient")){
 					ActionContext.getContext().getSession().put("user",rs.getString(2));//登录成功，将用户数据放入到Session中 
 					return "SUCCESS";
+				}
+				else if(rs.getString(8).equals(pkey)&&rs.getString(10).equals("doctor")){
+					ActionContext.getContext().getSession().put("user",rs.getString(2));
+					ActionContext.getContext().getSession().put("Department",rs.getString(11));//登录成功，将用户数据放入到Session中 
+					return "SUCCESS1";
 				}
 				else{
 					return "PsError";

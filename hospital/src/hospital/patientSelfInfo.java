@@ -22,7 +22,7 @@ public class patientSelfInfo implements Action {
 	public String execute() throws Exception {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness","root","123456");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness","root","wan2013");
 	        Statement stmt = con.createStatement();
 	        ResultSet rs = stmt.executeQuery("select * from Patient where PatientName=\""+ActionContext.getContext().getSession().get("user")+"\"");
 	        pt = new Patient();

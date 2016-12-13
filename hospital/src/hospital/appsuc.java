@@ -19,7 +19,16 @@ public class appsuc implements Action {
 	private String DocName;
 	private String Name;
 	private String Time1;
+	private String jus;
 	
+	public String getJus() {
+		return jus;
+	}
+
+	public void setJus(String jus) {
+		this.jus = jus;
+	}
+
 	public String getName() {
 		return Name;
 	}
@@ -65,7 +74,7 @@ public class appsuc implements Action {
 		try{
 			Class.forName("com.mysql.jdbc.Driver");
 			System.out.println("成功连接到数据库！");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness?useUnicode=true&characterEncoding=utf-8&useSSL=false","root","123456");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness?useUnicode=true&characterEncoding=utf-8&useSSL=false","root","wan2013");
 			stmt = con.createStatement();	       
 		}catch(SQLException e)
 		{
@@ -94,12 +103,15 @@ public class appsuc implements Action {
 		if(getTime().equals("6")){
 			Time1 = "f";
 		}
-		String sql = "update DoctorList set "+Time1+" ='"+ActionContext.getContext().getSession().get("user")+"' where Date = '"+getDate()+"' and DoctorName = '"+getDocName()+"' and Department ='"+getDepartment()+"'";
-		System.out.println("2");
-		System.out.println(sql);
-		stmt.executeUpdate(sql);
-		System.out.println("3");
-		return "AppSuc";
+		System.out.println(jus);
+		if(getJus().equals("0")){
+			String sql = "update DoctorList set "+Time1+" ='"+ActionContext.getContext().getSession().get("user")+"' where Date = '"+getDate()+"' and DoctorName = '"+getDocName()+"' and Department ='"+getDepartment()+"'";
+			stmt.executeUpdate(sql);
+			return "AppSuc";
+		}
+		else{
+			return "Appf";
+		}
 	}
 
 }

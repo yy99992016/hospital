@@ -29,7 +29,7 @@ public class DoctorgetinfoID {
 	try{
 		Class.forName("com.mysql.jdbc.Driver");
 		System.out.println("成功连接到数据库！");
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness","root","123456");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/selfillness","root","wan2013");
 		System.out.println(doctorID);
 		Statement stmt = con.createStatement();
 		ResultSet rs = stmt.executeQuery("select * from doctorlist where DoctorID="+"\""+doctorID+"\"");

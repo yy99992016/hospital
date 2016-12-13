@@ -10,7 +10,49 @@ public class Doctor1 {
 	String f;
 	String Date;
 	String Department;
+	String jus;
+	String jus1;
+	String jus2;
+	String jus3;
+	String jus4;
+	String jus5;
 
+	public String getJus1() {
+		return jus1;
+	}
+	public void setJus1(String jus1) {
+		this.jus1 = jus1;
+	}
+	public String getJus2() {
+		return jus2;
+	}
+	public void setJus2(String jus2) {
+		this.jus2 = jus2;
+	}
+	public String getJus3() {
+		return jus3;
+	}
+	public void setJus3(String jus3) {
+		this.jus3 = jus3;
+	}
+	public String getJus4() {
+		return jus4;
+	}
+	public void setJus4(String jus4) {
+		this.jus4 = jus4;
+	}
+	public String getJus5() {
+		return jus5;
+	}
+	public void setJus5(String jus5) {
+		this.jus5 = jus5;
+	}
+	public String getJus() {
+		return jus;
+	}
+	public void setJus(String jus) {
+		this.jus = jus;
+	}
 	public String getName() {
 		return name;
 	}

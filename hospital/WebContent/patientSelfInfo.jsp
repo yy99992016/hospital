@@ -65,25 +65,23 @@ function updatep(e)
 <!-- header -->
 			<div class="header">	
 					<div class="logo">
-					   <a href="index.html"><i class="glyphicon glyphicon-plus" aria-hidden="true"></i>Medical Clinic<span>We Work For Your Health</span></a>
+					   <a href="patientindex.jsp"><i class="glyphicon glyphicon-plus" aria-hidden="true"></i>自助挂号系统<span>为您的健康服务</span></a>
 					</div>
 					<div class="top-nav">
 						<span class="menu"><img src="images/menu.png" alt=" " /></span>
 						<ul class="nav">
-							<li class="active"><a href="patientindex.html">Home</a></li>
-							<li><a href= "#DocShow">DoctorShow</a></li>
-							<li><a href="#AboutUS">AboutUs</a></li>
-							<li><a href="appointment.jsp">Appointment</a></li>
+							<li><a href="patientindex.jsp">主页</a></li>
+							<li><a href="appointment.jsp">预约</a></li>
 							<li class="dropdown"><s:a href="#" data-toggle="dropdown" class="dropdown-toggle">${user}<strong class="caret"></strong></s:a>
 								<ul class="dropdown-menu">
 									<li>
-										 <a href="http://localhost:8080/HospitalS/patientSelfInfo.action">Selfmanagement</a>
+										 <a href="http://localhost:8080/HospitalS/patientSelfInfo.action">个人信息</a>
 									</li>
 									<li>
-										 <a href="http://localhost:8080/HospitalS/Logoff.action">Logoff</a>
+										 <a href="http://localhost:8080/HospitalS/Logoff.action">退出</a>
 									</li>
 									<li>
-										 <a href="http://localhost:8080/HospitalS/query.action">resmanagement</a>
+										 <a href="http://localhost:8080/HospitalS/query.action">预约查询</a>
 									</li>
 								</ul>
 							</li>
@@ -237,68 +235,9 @@ function updatep(e)
 <!-- footer -->
 	<div class="footer">
 		<div class="container">
-			<div class="footer-grids">
-				<div class="col-md-3 footer-grid">
-					<h3>patients & Visitors</h3>
-					<ul>
-						<li><a href="#">Find a Doctor</a></li>
-						<li><a href="#">Information For patients</a></li>
-						<li><a href="#">Information For visitors</a></li>
-						<li><a href="#">Pay Hospital Bills In Online</a></li>
-						<li><a href="#">Financial Services</a></li>
-						<li><a href="#">Our Commitment to</a></li>
-						<li><a href="#">Quality Care</a></li>
-						<li><a href="#">Events</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 footer-grid">
-					<h3>research</h3>
-					<ul>
-						<li><a href="#">Reaserch Highlights</a></li>
-						<li><a href="#">Resources For Professionals</a></li>
-						<li><a href="#">Finding Opportunities</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 footer-grid">
-					<h3>education & Training</h3>
-					<ul>
-						<li><a href="#">Patient Health Library</a></li>
-						<li><a href="#">Residency & Fellowship</a></li>
-						<li><a href="#">Information</a></li>
-						<li><a href="#">Nursing Professional</a></li>
-						<li><a href="#">Development</a></li>
-						<li><a href="#">Professional Training</a></li>
-						<li><a href="#">Professional Development</a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 footer-grid">
-					<h3>community</h3>
-					<ul>
-						<li><a href="#">Community Health & Wellness</a></li>
-						<li><a href="#">Community Relations</a></li>
-						<li><a href="#">Community Services & Resources</a></li>
-						<li><a href="#">Community Reports</a></li>
-						<li><a href="#">News & Events</a></li>
-					</ul>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
 			<div class="footer-grds">
 				<div class="footer-grds-left">
-					<ul>
-						<li><a href="#">Privacy Policy |</a></li>
-						<li><a href="contact.html">Sitemap |</a></li>
-						<li><a href="#">Terms of Use</a></li>
-					</ul>
-					<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
-				</div>
-				<div class="footer-grds-right">
-					<ul>
-						<li><a href="#" class="fa"></a></li>
-						<li><a href="#" class="fb"></a></li>
-						<li><a href="#" class="fc"></a></li>
-						<li><a href="#" class="fd"></a></li>
-					</ul>
+					<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://www.cssmoban.com/"></a></p>
 				</div>
 				<div class="clearfix"> </div>
 			</div>

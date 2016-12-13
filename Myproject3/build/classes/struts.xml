@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="default" extends="struts-default">
+		<action name="searchdoc" class="Doctorgetinfo">
+			<result name="SUCCESS">/doctorInfo.jsp</result>
+			<result name="FAIL">/doctorInforFail.jsp</result>
+		</action>
+		<action name="searchdocid" class="DoctorgetinfoID">
+			<result name="SUCCESS">/doctorInfo.jsp</result>
+			<result name="FAIL">/fail.jsp</result>
+		</action>
+		<action name="doctorrecom" class="Doctorrecommend">
+			<result name="SUCCESS">/DoctorList.jsp</result>
+			<result name="FAIL">/doctorrecommendFail.jsp</result>
+		</action>
+		<action name="patientreg" class="Patientregister">
+            <result name="SUCCESS">/index.jsp</result>
+            <result name="Password1">/registerKeyerror.jsp</result>
+            <result name="UserExist">/registerUserexist.jsp</result>
+            <result name="FAIL">/fail.jsp</result>
+      	</action>
+      	<action name="patientlog" class="Login">
+            <result name="SUCCESS">/patientSelfInfo.jsp</result>
+            <result name="NoUser">/fail.jsp</result>
+            <result name="PsError">/fail.jsp</result>
+            <result name="FAIL">/fail.jsp</result>
+      	</action>
+      	<action name="updatep" class="patientInfoUpdate">
+            <result name="SUCCESS">/index.jsp</result>
+            <result name="FAIL">/fail.jsp</result>
+      	</action>
+	</package>
+</struts>
